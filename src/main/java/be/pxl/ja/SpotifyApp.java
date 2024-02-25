@@ -1,6 +1,7 @@
 package be.pxl.ja;
 
 import java.nio.file.Path;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,16 +44,25 @@ public class SpotifyApp {
 		return null;
 	}
 
-	// 7. get max length of all spotify records
-	public int getMaxLength() {
+	// 7. get max duration of all spotify records
+	public int getMaxDuration() {
 		return 0;
 	}
 
-	// 8. get most popular genre (the genre with the most spotify records)
+	// 8. get average duration of all spotify records
+	public double getAverageDuration() {
+		return 0;
+	}
+
+	// 9. get most popular genre (the genre with the most spotify records)
 	public Genre getMostPopularGenre() {
 		return null;
 	}
 
+	// 10. get the number of spotify records released in the given month
+	public int getNumberOfReleases(Month month) {
+		return 0;
+	}
 
 	public void saveToFile(List<SpotifyRecord> list, Path filename) {
 		// TODO: implement this method

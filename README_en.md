@@ -1,21 +1,17 @@
 ## 2023 spotify top 50
 
-### Introductie
-Gegeven is een dataset die als muziek in de oren zal klinken, de top 50 van Spotify van 2023
-(top_50_2023.csv). In deze opdracht ga je leren om de data in te lezen. Vervolgens ga
-je bewerkingen maken met streams en lambda expressies.
-### Leerdoelen:
+### Introduction
+Given is a dataset that will sound like music to the ears, the top 50 of Spotify from 2023 (top_50_2023.csv). 
+In this assignment, you read the data. Then, you will perform operations using streams and lambda expressions.
 
+### Learning Objectives:
 - File I/O
 - ArrayList
-- Streams en lambda expressies
-- Unit testen schrijven
-- Maven gebruiken voor dependencies
+- Streams and lambda expressions
+- Writing unit tests
 
-### Probleemstelling
-
-Het csv bestand bestaat uit een 50 lijnen met telkens dezelfde opbouw, de eerste
-regel van het bestand bevat de kolomnamen:
+### Problem Statement
+The CSV file consists of 50 lines with the same structure, the first line of the file contains the column names:
 
      artist_name;track_name;is_explicit;album_release_date;genres;danceability;valence;energy;loudness;acousticness;instrumentalness;liveness;speechiness;key;tempo;mode;duration_ms;time_signature;popularity
 
@@ -40,17 +36,17 @@ regel van het bestand bevat de kolomnamen:
 | duration_ms | The length of the track in milliseconds |
 | time_signature | An estimated overall time signature of a track |
 | popularity | A score between 0 and 100, with 100 being the most popular |
- 
- ### Gegeven
-De klasse SpotifyRecord.
-  
+
+### Provided
+De class SpotifyRecord.
+
 ### Taak 1
 
 Vervolledig de helper-klasse SpotifyRecordMapper met de static methode
 mapDataToSpotifyRecord om de data van één spotify record uit het bestand om te
 vormen naar een SpotifyRecord-object. Indien een fout optreedt tijdens het inlezen van een record, dan gooi je een unchecked InvalidSpotifyRecordException.
 Schrijf unit testen om te controleren of de methode correct werkt.
-  
+
 ### Taak 2
 
 Vervolledig de klasse SpotifyReader. Implementeer de methode loadSpotifyRecords. Hou hierbij rekening met de volgende richtlijnen:
@@ -68,16 +64,16 @@ Vervolledig de klasse SpotifyReader. Implementeer de methode loadSpotifyRecords.
   SpotifyRecords.
 
 ### Taak 3
-  Vul nu in de klasse SpotifyApp de onderstaande methoden aan. In elke methode (behave
-  getNumberOfSpotifyRecords) moet minstens één stream gebruikt worden om de
-  oplossing te bekomen.
-  Enkel oplossingen die door middel van een stream slagen in de unit testen worden
-  goedgekeurd. Met behulp van de klasse SpotifyAppTest kan je je implementatie testen.
-  Je mag geen wijzigingen aanbrengen in het bestand top50spotify2019.csv en de
-  testklasse SpotifyAppTest.
-  In de constructor van de klasse SpotifyApp gebruik je eerst de SpotifyReader om het
-  bestand top_50_2023.csv in te lezen. De ingelezen SpotifyRecords worden
-  toegekend aan een instantievariabele van de klasse SpotifyApp.
+Vul nu in de klasse SpotifyApp de onderstaande methoden aan. In elke methode (behave
+getNumberOfSpotifyRecords) moet minstens één stream gebruikt worden om de
+oplossing te bekomen.
+Enkel oplossingen die door middel van een stream slagen in de unit testen worden
+goedgekeurd. Met behulp van de klasse SpotifyAppTest kan je je implementatie testen.
+Je mag geen wijzigingen aanbrengen in het bestand top50spotify2019.csv en de
+testklasse SpotifyAppTest.
+In de constructor van de klasse SpotifyApp gebruik je eerst de SpotifyReader om het
+bestand top_50_2023.csv in te lezen. De ingelezen SpotifyRecords worden
+toegekend aan een instantievariabele van de klasse SpotifyApp.
 
 1. **int getNumberOfSpotifyRecords()**
 
@@ -89,20 +85,20 @@ Vervolledig de klasse SpotifyReader. Implementeer de methode loadSpotifyRecords.
    records. (Je mag ervan uitgaan dat het 5 verschillende namen zijn.)
 
 3. **int getNumberOfUniqueArtists()**
-   
-    Hoeveel unieke namen van artiesten zijn er in de lijst?
+
+   Hoeveel unieke namen van artiesten zijn er in de lijst?
 
 4. **List<SpotifyRecord> getSpotifyRecordsByArtist(String artistName)**
 
-    Geen voor de gegeven artiest alle SpotifyRecords uit de lijst.
+   Geen voor de gegeven artiest alle SpotifyRecords uit de lijst.
 
 5. **SpotifyRecord getMostDanceableSpotifyRecord()**
-   
-    Welke SpotifyRecord heeft de hoogste waarde voor danceability?
+
+   Welke SpotifyRecord heeft de hoogste waarde voor danceability?
 
 6. **String getDanceableGenres()**
-   
-    Geef de verschillende genres terug met een danceability groter of gelijk aan 0.8 in
+
+   Geef de verschillende genres terug met een danceability groter of gelijk aan 0.8 in
    een String. De namen van de genres moeten gescheiden zijn door een komma en
    mogen geen dubbels bevatten.
 
@@ -111,7 +107,7 @@ Vervolledig de klasse SpotifyReader. Implementeer de methode loadSpotifyRecords.
    Wat is de langste duur van een SpotifyRecord?
 
 8. **int getAverageLength()**
-    Wat is de gemiddelde duur van een SpotifyRecord?
+   Wat is de gemiddelde duur van een SpotifyRecord?
 
 9. **Genre getMostPopularGenre()**
    Geef het genre dat het meeste voorkomt. Met andere woorden, van welk genre zijn er het meeste SpotifyRecords?
@@ -129,7 +125,7 @@ saveToFile heeft 1 parameter: een lijst van SpotifyRecords.
 In de klasse SpotifyAppRunner gebruik je de methode saveToFile om de SpotifyRecords
 van Taylor Swift (zie variabele records) weg te schrijven naar het bestand taylor.txt in de
 resources-folder.
-   
+
 ### Taak 5
 
 Het hoofdprogramma is gegeven, maar het wegschrijven van de titels van de records van
