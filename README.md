@@ -119,12 +119,12 @@ Vervolledig de klasse SpotifyReader. Implementeer de methode loadSpotifyRecords.
 10. **int getNumberOfReleases(Month month)**
     Geef het aantal SpotifyRecords dat is uitgekomen in de opgegeven maand.
 
-Je kan de verschillende implementaties testen met de testklasse SpotifyAppTest.
+Je kan de verschillende methodes testen met de testklasse SpotifyAppTest.
 
 ### Taak 4
 
 Tenslotte implementeer je een methode saveToFile in de klasse SpotifyApp. De methode
-saveToFile heeft 1 parameter: een lijst van SpotifyRecords.
+saveToFile heeft 2 parameters: een lijst van SpotifyRecords en een path.
 
 In de klasse SpotifyAppRunner gebruik je de methode saveToFile om de SpotifyRecords
 van Taylor Swift (zie variabele records) weg te schrijven naar het bestand taylor.txt in de

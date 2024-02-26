@@ -38,101 +38,92 @@ The CSV file consists of 50 lines with the same structure, the first line of the
 | popularity | A score between 0 and 100, with 100 being the most popular |
 
 ### Provided
-De class SpotifyRecord.
+Class SpotifyRecord.
 
-### Taak 1
+### Task 1
 
-Vervolledig de helper-klasse SpotifyRecordMapper met de static methode
-mapDataToSpotifyRecord om de data van één spotify record uit het bestand om te
-vormen naar een SpotifyRecord-object. Indien een fout optreedt tijdens het inlezen van een record, dan gooi je een unchecked InvalidSpotifyRecordException.
-Schrijf unit testen om te controleren of de methode correct werkt.
+Complete the helper class SpotifyRecordMapper with the static method 
+mapDataToSpotifyRecord to transform the data of a single 
+Spotify record from the file into a SpotifyRecord object. 
+If an error occurs while reading a record, then throw an 
+unchecked InvalidSpotifyRecordException. 
+Write unit tests to check if the method works correctly.
 
-### Taak 2
+### Task 2
 
-Vervolledig de klasse SpotifyReader. Implementeer de methode loadSpotifyRecords. Hou hierbij rekening met de volgende richtlijnen:
-- Gebruik de static methode mapDataToSpotifyRecord in de klasse
-  SpotifyRecordMapper om de data van een spotify record uit het bestand om te
-  vormen naar een SpotifyRecord-object.
-- Alle SpotifyRecord-objecten worden in een List opgeslagen die wordt
-  teruggegeven als resultaat.
-- De inlees-methode van de SpotifyReader klasse heeft als argumenten het Path
-  naar de te lezen file.
-- Als bij het aanroepen van de SpotifyRecordMapper een exception wordt opgegooid
-  omdat een lijn niet ingelezen kan worden door ontbrekende data, dan zorg je dat
-  de SpotifyReader de foutboodschap met System.err.println() afdrukt en je
-  garandeert dat de SpotifyReader verder gaat met het inlezen van overige
-  SpotifyRecords.
+Complete the SpotifyReader class. Implement the loadSpotifyRecords 
+method, taking into account the following guidelines:
 
-### Taak 3
-Vul nu in de klasse SpotifyApp de onderstaande methoden aan. In elke methode (behave
-getNumberOfSpotifyRecords) moet minstens één stream gebruikt worden om de
-oplossing te bekomen.
-Enkel oplossingen die door middel van een stream slagen in de unit testen worden
-goedgekeurd. Met behulp van de klasse SpotifyAppTest kan je je implementatie testen.
-Je mag geen wijzigingen aanbrengen in het bestand top50spotify2019.csv en de
-testklasse SpotifyAppTest.
-In de constructor van de klasse SpotifyApp gebruik je eerst de SpotifyReader om het
-bestand top_50_2023.csv in te lezen. De ingelezen SpotifyRecords worden
-toegekend aan een instantievariabele van de klasse SpotifyApp.
+- Use the static method mapDataToSpotifyRecord in the SpotifyRecordMapper class to transform the data from a Spotify record in the file into a SpotifyRecord object.
+- All SpotifyRecord objects are stored in a List that is returned as a result.
+- The read method of the SpotifyReader class takes the Path to the file to be read as an argument.
+- If calling the SpotifyRecordMapper throws an exception (e.g. due to missing or invalid data), ensure that the SpotifyReader prints the error message with System.err.println(). 
+The SpotifyReader should continue reading the remaining SpotifyRecords.
+
+### Task 3
+In the SpotifyApp class, complete the methods below. 
+Use the Streaming API and lambda expression for each method (except getNumberOfSpotifyRecords).
+You can test your implementation with the help of the SpotifyAppTest class.
+You may not make changes to the top_50_2023.csv file and the SpotifyAppTest test class.
+In the constructor of the SpotifyApp class, first use the SpotifyReader to read the file top_50_2023.csv.
+The read SpotifyRecords are assigned to an instance variable of the SpotifyApp class.
 
 1. **int getNumberOfSpotifyRecords()**
 
-   Geef het aantal spotify records in de lijst. Hiervoor gebruik je geen stream!
+   Return the number of Spotify records in the list. (Do not use a stream!)
 
 2. **List<String> getTop5ArtistsWithHighestPopularity()**
 
-   Geef een lijst terug met de namen van de artiesten van de 5 populairste spotify
-   records. (Je mag ervan uitgaan dat het 5 verschillende namen zijn.)
+   Return a list with the names of the artists from the 5 most popular Spotify records. (You may assume that these are 5 different names.)
 
 3. **int getNumberOfUniqueArtists()**
 
-   Hoeveel unieke namen van artiesten zijn er in de lijst?
+   How many unique artist names are there in the list?
 
 4. **List<SpotifyRecord> getSpotifyRecordsByArtist(String artistName)**
 
-   Geen voor de gegeven artiest alle SpotifyRecords uit de lijst.
+   For the given artist, retrieve all SpotifyRecords from the list.
 
 5. **SpotifyRecord getMostDanceableSpotifyRecord()**
 
-   Welke SpotifyRecord heeft de hoogste waarde voor danceability?
+   Which SpotifyRecord has the highest value for danceability?
 
 6. **String getDanceableGenres()**
 
-   Geef de verschillende genres terug met een danceability groter of gelijk aan 0.8 in
-   een String. De namen van de genres moeten gescheiden zijn door een komma en
-   mogen geen dubbels bevatten.
+   Return the different genres with a danceability greater than or equal to 0.8 in a String. 
+   The names of the genres should be separated by a comma and the string should not contain duplicates.
 
 7. **int getMaxDuration()**
 
-   Wat is de langste duur van een SpotifyRecord?
+   What is the longest duration of a SpotifyRecord?
 
 8. **int getAverageLength()**
-   Wat is de gemiddelde duur van een SpotifyRecord?
+   What is the average duration of a SpotifyRecord?
 
 9. **Genre getMostPopularGenre()**
-   Geef het genre dat het meeste voorkomt. Met andere woorden, van welk genre zijn er het meeste SpotifyRecords?
+   Give the most common genre. In other words, which genre has the most SpotifyRecords?
 
 10. **int getNumberOfReleases(Month month)**
-    Geef het aantal SpotifyRecords dat is uitgekomen in de opgegeven maand.
+    Provide the number of SpotifyRecords that were released in the specified month.
 
-Je kan de verschillende implementaties testen met de testklasse SpotifyAppTest.
 
-### Taak 4
+You can test the methods using the test class SpotifyAppTest.
 
-Tenslotte implementeer je een methode saveToFile in de klasse SpotifyApp. De methode
-saveToFile heeft 1 parameter: een lijst van SpotifyRecords.
+### Task 4
 
-In de klasse SpotifyAppRunner gebruik je de methode saveToFile om de SpotifyRecords
-van Taylor Swift (zie variabele records) weg te schrijven naar het bestand taylor.txt in de
-resources-folder.
+Finally, implement the method saveToFile in the SpotifyApp class. 
+The saveToFile method has 2 parameters: a list of SpotifyRecords and a path.
 
-### Taak 5
+In the SpotifyAppRunner class, use the saveToFile method to write the SpotifyRecords of Taylor Swift (see the records variable) to the file taylor.txt in the resources folder.
 
-Het hoofdprogramma is gegeven, maar het wegschrijven van de titels van de records van
-Taylor Swift ontbreekt nog in de code. Voeg deze functionaliteit nog toe.
+
+### Task 5
+
+
+The main program is provided, but the functionality to write the titles of Taylor Swift's records to the file is missing. Add this functionality.
 
 ### Output
-Wanneer je het hoofdprogramma in de klasse SpotifyAppRunner uitvoert zou je de onderstaande output moeten krijgen.
+When you run the main program in the SpotifyAppRunner class, you should get the following output.
 
 ```
 Error parsing spotify record [Tom Odell;Another Love;True;2013-06-24;['pop'];0.445;0.131;0.537;0.04;4;122.769;0;244360;4;72]
