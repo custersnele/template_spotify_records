@@ -1,4 +1,4 @@
-package be.pxl.ja;
+package be.pxl;
 
 import java.time.format.DateTimeFormatter;
 

@@ -1,4 +1,4 @@
-package be.pxl.ja;
+package be.pxl;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
