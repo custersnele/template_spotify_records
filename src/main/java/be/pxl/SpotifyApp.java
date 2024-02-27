@@ -10,7 +10,7 @@ public class SpotifyApp {
 	private List<SpotifyRecord> spotifyRecords;
 
 	public SpotifyApp() {
-		// TODO: read data from file top50spotify2019.csv and assign to spotifyRecores
+		// TODO: read data from file top_50_2023.csv and assign to spotifyRecords
 	}
 
 	// 1. get the number of spotify records in the list (no stream!)
@@ -18,7 +18,7 @@ public class SpotifyApp {
 		return 0;
 	}
 
-	// 2. get artist name of top 5 spotify records with highest popularity
+	// 2. get artist name of top 5 spotify records with the highest popularity
 	public List<String> getTop5ArtistsWithHighestPopularity() {
 		return new ArrayList<>();
 	}
